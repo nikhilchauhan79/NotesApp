@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AddEditNoteActivity.class);
                 startActivityForResult(intent, ADD_NOTE_REQUEST);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             }
         });
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -80,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(AddEditNoteActivity.EXTRA_PRIORITY, note.getPriority());
                 intent.putExtra(AddEditNoteActivity.EXTRA_ID, note.getId());
                 startActivityForResult(intent, EDIT_NOTE_REQUEST);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
 
             }
         });
